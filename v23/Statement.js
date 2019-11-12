@@ -8,7 +8,7 @@ function createStatementData(invoice, plays) {
     statementData.performance = invoice.performance.map(enrichPerformance);
     statementData.totalAmount = totalAmount(statementData);
     statementData.totalVolumeCredits = totalVolumeCredits(statementData);
-    return renderPlainText(statementData, plays);
+    return renderHtml(statementData);
 }
 
 function renderHtml(data) {
