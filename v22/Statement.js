@@ -2,13 +2,13 @@ function statement(invoice, plays) {
     return renderPlainText(createStatementData(invoice, plays));
 }
 
-function createStatementData(invoice, plays) {
+function createStatementData(invoice) {
     const statementData = {};
     statementData.customer = invoice.customer;
     statementData.performance = invoice.performance.map(enrichPerformance);
     statementData.totalAmount = totalAmount(statementData);
     statementData.totalVolumeCredits = totalVolumeCredits(statementData);
-    return renderPlainText(statementData, plays);
+    return statementData;
 }
 
 function renderPlainText(data) {
